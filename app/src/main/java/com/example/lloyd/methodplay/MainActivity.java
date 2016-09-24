@@ -25,9 +25,33 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view)
     {
 
-        display(quantity);
-        displayPrice(quantity * 5);
+        int price = calculatePrice();
+        String priceMessage = createOrderSumary(price);
+        displayMessage(priceMessage);
 
+    }
+
+      /*
+    * calculate the price of the order
+    * quantity is the number of cups of coffee order
+     */
+
+    private int calculatePrice()
+    {
+        return quantity * 5;
+
+    }
+
+    /*
+    *order summary method is like a slip
+     */
+    private String createOrderSumary(int price)
+    {
+        String priceMessage = "Name: Lloyd Kagiso";
+        priceMessage = priceMessage + "\nQuantity" + quantity;
+        priceMessage = priceMessage + "\nTotal: $ "  + price;
+        priceMessage = priceMessage + "\n Thank you! ";
+        return priceMessage;
     }
 
     /*
@@ -37,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     {
 
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /*
@@ -47,34 +71,27 @@ public class MainActivity extends AppCompatActivity {
     {
 
         quantity = quantity -1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
 
-    private void display(int number)
+    private void displayQuantity(int numberOfCoffee)
     {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + numberOfCoffee);
 
     }
 
-    /*
-    * the method will be called when the displayprice is been called
-     */
 
-    private  void displayPrice(int number)
-    {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(java.text.NumberFormat.getCurrencyInstance().format(number));
-    }
 
     /*
     * this method displays the given text on screen
      */
     private void displayMessage(String message)
     {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderTextView = (TextView) findViewById(R.id.order_text_view);
+        orderTextView.setText(message);
     }
+
 
 }
