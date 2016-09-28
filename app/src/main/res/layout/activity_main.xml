@@ -88,18 +88,7 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="ORDER SUMMARY" />
 
-    <TextView
-        android:id="@+id/order_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="$10" />
 
     <Button
         android:layout_width="wrap_content"

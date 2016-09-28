@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         {
             startActivity(intent);
         }
-        displayMessage(priceMessage);
+
 
 
     }
@@ -129,14 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*
-    * this method displays the given text on screen
-     */
-    private void displayMessage(String message)
-    {
-        TextView orderTextView = (TextView) findViewById(R.id.order_text_view);
-        orderTextView.setText(message);
-    }
+
 
 
 }
